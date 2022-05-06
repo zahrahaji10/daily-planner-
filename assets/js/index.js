@@ -9,5 +9,6 @@ const renderDate = () => {
 const onReady = () => {
   console.log("page loaded");
 };
+
 //event lister for whole document when it loads
 pageOnLoad.addEventListener("click", onReady);
