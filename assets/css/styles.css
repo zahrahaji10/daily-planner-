@@ -2,11 +2,13 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  font-family: "Open Sans", sans-serif;
 }
 
 :root {
   --white: rgb(255, 255, 255);
-  --blue: ;
+  --black: black;
+  --blue: rgb(61, 139, 228);
 }
 
 /* whole body section */
@@ -17,11 +19,11 @@
   font-weight: bold;
   background-color: rgb(61, 139, 228);
   line-height: 20px;
-  color: rgb(255, 255, 255);
 }
 
 .header-title {
   font-size: 60px;
+  color: black;
 }
 
 /* body section styling */
@@ -38,10 +40,28 @@ textarea {
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  height: 50px;
 }
 
-.description {
+<div
+  class="time-block-container d-flex flex-row align-items-center"
+  > <div
+  class="time-label col-md-1"
+  > time</div
+  > <div
+  class="textbox"
+  > <textarea
+  class="text-area form-control"
+  > </textarea
+  > </div
+  > <div
+  class="button-container"
+  > <button
+  class="save-button"
+  > save</button
+  > </div
+  > </div
+  > .description {
   white-space: pre-wrap;
 }
 

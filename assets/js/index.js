@@ -1,13 +1,14 @@
 //~ FUNCTIONS SECTION
 
 // function to create HTML for each time block, append to page
-const renderTimeBlocks = () => {};
+const renderTimeBlocks = () => {
+  // target the time block container
+};
 
 // function to target the current date section
 const renderDate = () => {
   // get current date from moment js and format date/time
-  const dateAndTime = moment().format("dddd, MMMM Do, YYYY -- hh:mm A");
-
+  const dateAndTime = moment().format("dddd, MMMM Do, YYYY hh:mm A");
   //set the text.content to in the <p> to update the date
   $("#currentDay").append(dateAndTime);
 };
