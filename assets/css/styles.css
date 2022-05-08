@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Saira Condensed", sans-serif;
 }
 
 :root {
@@ -34,6 +34,8 @@ body {
   line-height: 1;
 }
 
+/* time block items styling */
+
 textarea {
   background: transparent;
   border: none;
@@ -41,27 +43,22 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   height: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
-<div
-  class="time-block-container d-flex flex-row align-items-center"
-  > <div
-  class="time-label col-md-1"
-  > time</div
-  > <div
-  class="textbox"
-  > <textarea
-  class="text-area form-control"
-  > </textarea
-  > </div
-  > <div
-  class="button-container"
-  > <button
-  class="save-button"
-  > save</button
-  > </div
-  > </div
-  > .description {
+.save-button {
+  padding: 2px;
+  margin-right: 50px;
+  color: var(--white);
+  background: var(--black);
+  border-radius: 10%;
+}
+
+.time-blocks {
+  margin: 20px 0px;
+}
+.description {
   white-space: pre-wrap;
 }
 
