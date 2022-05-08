@@ -6,9 +6,10 @@ const renderTimeBlocks = () => {};
 // function to target the current date section
 const renderDate = () => {
   // get current date from moment js and format date/time
-  let dateAndTime = moment().format("dddd, MMMM Do, YYYY -- hh:mm A");
+  const dateAndTime = moment().format("dddd, MMMM Do, YYYY -- hh:mm A");
+
   //set the text.content to in the <p> to update the date
-  $("dateAndTime").append(currentDay);
+  $("#currentDay").append(dateAndTime);
 };
 
 // First function to execute when page loads
