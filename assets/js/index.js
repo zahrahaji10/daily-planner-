@@ -13,113 +13,95 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
-//~ FUNCTIONS SECTION
+//~ Declarations
 
-// function that renders the time blocks in color of past, present or future when page loads
+// declaring each working hour in a variable using an object array
+const workingHours = [
+  {
+    timeLabel: "09:00AM",
+    key: 9,
+  },
+  {
+    timeLabel: "10:00AM",
+    key: 10,
+  },
+  {
+    timeLabel: "11:00AM",
+    key: 11,
+  },
+  {
+    timeLabel: "12:00AM",
+    key: 12,
+  },
+  {
+    timeLabel: "13:00PM",
+    key: 13,
+  },
+  {
+    timeLabel: "14:00PM",
+    key: 14,
+  },
+  {
+    timeLabel: "15:00PM",
+    key: 15,
+  },
+  {
+    timeLabel: "16:00PM",
+    key: 16,
+  },
+  {
+    timeLabel: "17:00PM",
+    key: 17,
+  },
+  //testing if function inside inner html works
+  {
+    timeLabel: "23:00PM",
+    key: 23,
+  },
+  {
+    timeLabel: "24:00PM",
+    key: 24,
+  },
+];
+
+//~ FUNCTIONS SECTION
 
 // function to create HTML for each time block, append to page
 const renderTimeBlocks = () => {
-  // target the time block container
-  $("#time-block-container")
-    .append(`<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">09:00am</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>
-<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">10:00am</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>
-<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">11:00am</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>
-<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">12:00pm</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>
-<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">13:00pm</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>
-<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">14:00pm</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>
-<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">15:00pm</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>
-<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">16:00pm</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>
-<div class="time-blocks d-flex flex-row align-items-center">
-  <div class="time-label">17:00pm</div>
-  <textarea
-    class="text-area form-control"
-    id="floatingTextarea2"
-    style="height: 100px"
-  ></textarea>
-  <div class="button-container">
-    <button class="save-button">save</button>
-  </div>
-</div>`);
+  // target the time block container and create time blocks
+  $.each(workingHours, function (index, workingHour) {
+    // get current hour using moment js
+    const currentHour = moment().hour();
+    console.log(currentHour);
+    const renderTextareaColor = () => {
+      // if current hour is equal to working hour
+      if (currentHour === workingHour.key) {
+        return "present";
+      }
+      //if current hour is less than working Hour
+      else if (currentHour < workingHour.key) {
+        return "future";
+        //if current hour greater than  working Hour
+      } else if (currentHour > workingHour.key) {
+        return "past";
+      }
+    };
+    // step 1: looping through all the working hours array and appending each working hour to time block container
+    // step 2: running render textarea color fn at each loop to return text color based on conditions
+    $(
+      "#time-block-container"
+    ).append(`<div class="time-blocks d-flex flex-row align-items-center">
+        <div id=timeLabel">${workingHour.timeLabel}</div>
+        <textarea
+          class="text-area form-control ${renderTextareaColor()}"
+          id="floatingTextarea2"
+          style="height: 100px"
+        ></textarea>
+        <div class="button-container">
+          <button class="save-button">save</button>
+        </div>
+        </div>`);
+  });
 };
 
 // function to target the current date section
@@ -138,8 +120,6 @@ const onReady = () => {
   renderTimeBlocks();
 };
 
-//? EVENT LISTENER
+//~ EVENT LISTENER
 //event lister for whole document when it loads
 $(window).on("load", onReady);
-
-//event for each hour of the day?
