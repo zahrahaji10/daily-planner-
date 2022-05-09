@@ -26,6 +26,13 @@
   color: black;
 }
 
+.lead {
+  color: var(--white);
+}
+
+.sup-heading {
+  font-size: 18px;
+}
 /* body section styling */
 
 body {
@@ -57,6 +64,11 @@ textarea {
 
 .time-blocks {
   margin: 20px 0px;
+}
+
+.time-label {
+  margin-left: 20px;
+  font-weight: bold;
 }
 .description {
   white-space: pre-wrap;
