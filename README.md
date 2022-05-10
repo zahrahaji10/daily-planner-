@@ -22,7 +22,7 @@ On page load;
 
 ## Frame Work of webpage
 
-<img width="322" alt="Screenshot 2022-05-10 031816" src="https://user-images.githubusercontent.com/102627226/167530123-26ad2ee1-fa51-4fd2-845f-c7d8dd8bb218.png">
+<img width="320" alt="wire-frame" src="https://user-images.githubusercontent.com/102627226/167531043-9ff042e7-b6fa-4693-bae1-4526e6dee57c.png">
 
 ## Screenshots
 
