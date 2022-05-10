@@ -16,25 +16,25 @@ https://github.com/zahrahaji10/daily-planner-/tree/dev
 
 ### User Journey
 
-#### On page load;
+##### On page load;
 
-- The current day and time is displayed on the page
-- All working hours from 9am - 5pm time blocks render on page
-- The time block elements are color coded (past: grey | present: red | future: green)
+- The current day and time is displayed on the header.
+- All working hours from 9am - 5pm time blocks render on page.
+- The time block elements are color coded (past: grey | present: red | future: green).
 
 <img width="941" alt="web" src="https://user-images.githubusercontent.com/102627226/167632048-d30d5976-2cb6-4b25-aa11-88a4bd586154.png">
 
-- The information the user saves on the time block is gets stored in local storage
+- The information the user saves on the time block gets stored in local storage.
 - When the user saves their events, the time block changes color to display that event has been saved successfully.
-- When the page reloads the user information displays on the page
+- When the page is re-loaded, the user information displays on the page.
 
 <img width="947" alt="saved" src="https://user-images.githubusercontent.com/102627226/167632162-78148141-8cf3-4508-bcf3-9ef0cfa458c4.png">
 
-- when user saved an empty time block, an alert message displays in the textarea section.
+- If the user saves an empty time block, an alert message appears in the textarea section.
 
 <img width="947" alt="alert" src="https://user-images.githubusercontent.com/102627226/167632826-cd8d6a30-b092-4413-8788-2843090b975c.png">
 
-### mobile responsive
+### Mobile Responsive
 
 <img width="476" alt="mobile" src="https://user-images.githubusercontent.com/102627226/167633400-228a967e-e620-478d-934f-6b20abf50d36.png">
 
