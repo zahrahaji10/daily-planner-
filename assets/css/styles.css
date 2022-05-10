@@ -5,6 +5,7 @@
   font-family: "Saira Condensed", sans-serif;
 }
 
+/* colors used to style */
 :root {
   --white: rgb(255, 255, 255);
   --black: black;
@@ -33,6 +34,7 @@
 
 .lead {
   color: var(--white);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
 }
 
 .sup-heading {
@@ -68,7 +70,7 @@ textarea {
 }
 
 .time-blocks {
-  margin: 20px 0px;
+  margin: 20px 30px;
 }
 
 .time-label {
@@ -97,4 +99,27 @@ textarea {
 .future {
   background-color: var(--green);
   color: var(--white);
+}
+
+/* media query for mobiles phones */
+
+@media only screen and (max-width: 576px) {
+  /* time block elements styling*/
+
+  textarea {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .save-button {
+    margin-right: 20px;
+  }
+
+  .time-blocks {
+    margin: 10px 20px;
+  }
+
+  .time-label {
+    margin-left: 10px;
+  }
 }
