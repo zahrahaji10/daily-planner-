@@ -85,7 +85,9 @@ textarea {
 .success-alert {
   background-color: var(--light-green) !important;
 }
+
 /* styles to adjust the time block colors */
+
 .past {
   background-color: var(--off-white);
   color: white;

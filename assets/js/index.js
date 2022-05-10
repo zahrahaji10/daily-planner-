@@ -63,7 +63,6 @@ const readFromLocalStorage = (key) => {
 
   // parse data from LS
   const parsedData = JSON.parse(dataFromLS);
-
   if (parsedData) {
     return parsedData;
   } else {
@@ -100,8 +99,9 @@ const renderTimeBlocks = () => {
         return "past";
       }
     };
+
     // step 1: looping through all the working hours array and appending each working hour to time block container
-    // step 2: running render textarea color fn at each loop to return text color based on conditions
+    // step 2: calling fn render text area color inside <textarea> html element to run fn for each loop and return text color based on condition
     $(
       "#time-block-container"
     ).append(`<div class="time-blocks d-flex flex-row align-items-center">
@@ -130,9 +130,8 @@ const renderTimeBlocks = () => {
         // call fn to store notes to LS
         writeToLocalStorage(workingHours[index].key, textAreas[index].value);
       } else {
-        // add
+        // add alert message to text area section
         textAreas[index].classList.add("danger-alert");
-        //
         textAreas[index].placeholder =
           "You can not save an empty section, please insert information to save";
       }
