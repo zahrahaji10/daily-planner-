@@ -43,7 +43,7 @@ On page load;
 
 <insert screen shoot here>
 
-Technologies
+## Technologies
 
 - HTML
 - CSS
@@ -52,3 +52,8 @@ Technologies
 - Boot Strap
 - Moment Js
 - Google Fonts
+
+## Improvements
+
+- Creating a remove button for user to remove unwanted events.
+- Creating tick boxes for user to be able to separate their events and tick off events to track their process.
