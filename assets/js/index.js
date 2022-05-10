@@ -53,16 +53,31 @@ const workingHours = [
     timeLabel: "17:00PM",
     key: 17,
   },
-  //testing if function inside inner html works
-  {
-    timeLabel: "23:00PM",
-    key: 23,
-  },
-  {
-    timeLabel: "24:00PM",
-    key: 24,
-  },
 ];
+
+//~ LOCAL STORAGE
+
+const readFromLocalStorage = (key) => {
+  // get from LS using key name
+  const dataFromLS = localStorage.getItem(key);
+
+  // parse data from LS
+  const parsedData = JSON.parse(dataFromLS);
+
+  if (parsedData) {
+    return parsedData;
+  } else {
+    return "";
+  }
+};
+
+const writeToLocalStorage = (key, value) => {
+  // convert value to string
+  const stringifiedValue = JSON.stringify(value);
+
+  // set stringified value to LS for key name
+  localStorage.setItem(key, stringifiedValue);
+};
 
 //~ FUNCTIONS SECTION
 
@@ -72,7 +87,6 @@ const renderTimeBlocks = () => {
   $.each(workingHours, function (index, workingHour) {
     // get current hour using moment js
     const currentHour = moment().hour();
-    console.log(currentHour);
     const renderTextareaColor = () => {
       // if current hour is equal to working hour
       if (currentHour === workingHour.key) {
@@ -96,11 +110,33 @@ const renderTimeBlocks = () => {
           class="text-area form-control ${renderTextareaColor()}"
           id="floatingTextarea2"
           style="height: 100px"
-        ></textarea>
+        >${readFromLocalStorage(workingHour.key)}</textarea>
         <div class="button-container">
           <button class="save-button">save</button>
         </div>
         </div>`);
+  });
+  // targeting all buttons
+  const buttons = document.querySelectorAll(".button-container");
+  // targeting text area elements
+  const textAreas = document.querySelectorAll(".text-area");
+  // looping trough each button and attaching an event listener
+  buttons.forEach((btn, index) => {
+    $(btn).on("click", () => {
+      // if text area is saved when not empty
+      if (textAreas[index].value != "") {
+        // render the alert and text box color
+        textAreas[index].classList.add("success-alert");
+        // call fn to store notes to LS
+        writeToLocalStorage(workingHours[index].key, textAreas[index].value);
+      } else {
+        // add
+        textAreas[index].classList.add("danger-alert");
+        //
+        textAreas[index].placeholder =
+          "You can not save an empty section, please insert information to save";
+      }
+    });
   });
 };
 

@@ -9,6 +9,11 @@
   --white: rgb(255, 255, 255);
   --black: black;
   --blue: rgb(61, 139, 228);
+  --light-red: #ecb5b2;
+  --off-white: #d3d3d3;
+  --green: #3a963a;
+  --red: #ff6961;
+  --light-green: rgb(118, 221, 118);
 }
 
 /* whole body section */
@@ -68,53 +73,28 @@ textarea {
 
 .time-label {
   margin-left: 20px;
-  font-weight: ;
-}
-.description {
-  white-space: pre-wrap;
 }
 
-.time-block {
-  text-align: center;
-  border-radius: 15px;
+/* alert styling */
+.danger-alert {
+  background-color: var(--light-red) !important ;
 }
 
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;
+.success-alert {
+  background-color: var(--light-green) !important;
 }
-
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-}
-
+/* styles to adjust the time block colors */
 .past {
-  background-color: #d3d3d3;
+  background-color: var(--off-white);
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
-  color: white;
+  background-color: var(--red);
+  color: var(--black);
 }
 
 .future {
-  background-color: #77dd77;
-  color: white;
-}
-
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06aed5;
-  color: white;
-}
-
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
+  background-color: var(--green);
+  color: var(--white);
 }
