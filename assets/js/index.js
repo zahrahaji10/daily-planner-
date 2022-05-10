@@ -82,10 +82,11 @@ const writeToLocalStorage = (key, value) => {
 
 // function to create HTML for each time block, append to page
 const renderTimeBlocks = () => {
-  // target the time block container and create time blocks
+  // target the time block container and create time blocks for each working hour in workingHours array
   $.each(workingHours, function (index, workingHour) {
     // get current hour using moment js
     const currentHour = moment().hour();
+    // function to render the textarea color depending on the conditional statements
     const renderTextareaColor = () => {
       // if current hour is equal to working hour
       if (currentHour === workingHour.key) {
