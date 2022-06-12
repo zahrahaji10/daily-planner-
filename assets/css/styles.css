@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Saira Condensed", sans-serif;
+}
+
+/* colors used to style */
+:root {
+  --white: rgb(255, 255, 255);
+  --black: black;
+  --blue: rgb(61, 139, 228);
+  --light-red: #ecb5b2;
+  --off-white: #d3d3d3;
+  --green: #3a963a;
+  --red: #ff6961;
+  --light-green: rgb(118, 221, 118);
+}
+
+/* whole body section */
+
+.header {
+  padding: 25px 0px;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(61, 139, 228);
+  line-height: 20px;
+}
+
+.header-title {
+  font-size: 60px;
+  color: black;
+}
+
+.lead {
+  color: var(--white);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+}
+
+.sup-heading {
+  font-size: 18px;
+}
+/* body section styling */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* time block items styling */
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  height: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.save-button {
+  padding: 2px;
+  margin-right: 50px;
+  color: var(--white);
+  background: var(--black);
+  border-radius: 10%;
+}
+
+.time-blocks {
+  margin: 20px 30px;
+}
+
+.time-label {
+  margin-left: 20px;
+}
+
+/* alert styling */
+.danger-alert {
+  background-color: var(--light-red) !important ;
+}
+
+.success-alert {
+  background-color: var(--light-green) !important;
+}
+
+/* styles to adjust the time block colors */
+
+.past {
+  background-color: var(--off-white);
+  color: white;
+}
+
+.present {
+  background-color: var(--red);
+  color: var(--black);
+}
+
+.future {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+/* media query for mobiles phones */
+
+@media only screen and (max-width: 576px) {
+  /* time block elements styling*/
+
+  textarea {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .save-button {
+    margin-right: 20px;
+  }
+
+  .time-blocks {
+    margin: 10px 20px;
+  }
+
+  .time-label {
+    margin-left: 10px;
+  }
+}
