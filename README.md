@@ -52,3 +52,7 @@ https://github.com/zahrahaji10/daily-planner-/tree/dev
 - Boot Strap
 - Moment Js
 - Google Fonts
+
+## Contact me 
+- Linkedin: [Click Here](https://www.linkedin.com/in/zahra-haji/)
+- Email : zahrahhaji10@gmail.com
